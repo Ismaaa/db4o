@@ -85,7 +85,38 @@ public class Metodes {
         }
     }    
     
+    /**
+     * Eliminem un mòdul
+     * @param baseDeDades
+     * @param codi 
+     */
+    public static void eliminarModul(ObjectContainer baseDeDades,String codi){
+        try{
+            ObjectSet result = baseDeDades.queryByExample(new Modul(codi,0,null));
+            Modul found = (Modul) result.next();
+            baseDeDades.delete(found);
+            System.out.println("S'ha esborrat correctament el mòdul");
+        } catch(Exception e){
+            System.out.println("S'ha produït un error a la eliminació");
+        }
+    }    
     
+    /**
+     * Eliminem un alumne
+     * @param baseDeDades
+     * @param codi 
+     */
+    public static void eliminarAlumne(ObjectContainer baseDeDades,String dni){
+        try{
+            ObjectSet result = baseDeDades.queryByExample(new Alumne(dni,null,null));
+            Alumne found = (Alumne) result.next();
+            baseDeDades.delete(found);
+            System.out.println("S'ha esborrat correctament l'alumne");
+        } catch(Exception e){
+            System.out.println("S'ha produït un error a la eliminació");
+        }
+    }    
+       
      /**
      * Imprimeix per pantalla el resultat d'una consulta sense importar 
      * el mètode de consulta

@@ -37,6 +37,10 @@ public class main {
             
             System.out.println("*********** ESBORRAR CICLES ***********");
             Metodes.eliminarCicle(baseDeDades, "R321");
+            System.out.println("*********** ESBORRAR MÒDULS ***********");
+            Metodes.eliminarModul(baseDeDades, "M03");            
+            System.out.println("*********** ESBORRAR ALUMNES ***********");
+            Metodes.eliminarAlumne(baseDeDades, "123654278F");
             
             System.out.println("*********** CONSULTAR CICLES ***********");
             Metodes.consultarCicle(baseDeDades, null);
