@@ -7,7 +7,7 @@ package classes.pojos;
 
 /**
  *
- * @author santi
+ * @author grup3
  */
 public class Modul {
     private String codiModul;
