@@ -10,7 +10,7 @@ import com.db4o.ObjectContainer;
 
 /**
  *
- * @author Isma
+ * @author grup3
  */
 public class main {
     /**
@@ -18,12 +18,14 @@ public class main {
     */
     public static void main(String[] args) {
         // TODO code application logic here
-        //es necesario realizar los 2 imports anteriores, ya que si no es ponible que automaticamente no los haga produciendose un error.
+        //es necessari realitzar els 2 imports anteriors, ja que es possible que si es fa automàticament es produeixqui un error.
         ObjectContainer baseDeDades=Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(),"congreso.db4o");
-        //creamos un alumne
         
+        //creem un cicle
         Cicles cicle1=new Cicles("R321","Cicle 1",430);
+        //creem un modul
         Modul modul1=new Modul("M03",417,"Programació");
+        //creem un alumne
         Alumne alumne1=new Alumne("123654278F","Isma","Superior",23);
         try {
             //System.out.println("*********** GUARDAR CICLES (\"***********");
