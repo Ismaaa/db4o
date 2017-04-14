@@ -19,7 +19,7 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
         //es necessari realitzar els 2 imports anteriors, ja que es possible que si es fa automàticament es produeixqui un error.
-        ObjectContainer baseDeDades=Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(),"congreso.db4o");
+        ObjectContainer baseDeDades=Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(),"grup3.db4o");
         
         //creem un cicle
         Cicles cicle1=new Cicles("R321","Cicle 1",430);
@@ -28,28 +28,28 @@ public class main {
         //creem un alumne
         Alumne alumne1=new Alumne("123654278F","Isma","Superior",23);
         try {
-            //System.out.println("*********** GUARDAR CICLES (\"***********");
-            //Metodes.guardarCicle(baseDeDades, cicle1);
-            //System.out.println("*********** GUARDAR MÒDULS ***********");
-            //Metodes.guardarModul(baseDeDades, modul1);
-            //System.out.println("*********** GUARDAR ALUMNES ***********");
-            //Metodes.guardarAlumne(baseDeDades, alumne1);
+            System.out.println("*********** GUARDAR CICLES (\"***********");
+            Metodes.guardarCicle(baseDeDades, cicle1);
+            System.out.println("*********** GUARDAR MÒDULS ***********");
+            Metodes.guardarModul(baseDeDades, modul1);
+            System.out.println("*********** GUARDAR ALUMNES ***********");
+            Metodes.guardarAlumne(baseDeDades, alumne1);
             
             System.out.println("*********** ESBORRAR CICLES ***********");
             Metodes.eliminarCicle(baseDeDades, "R321");
             
             System.out.println("*********** CONSULTAR CICLES ***********");
-            Metodes.consultarCicles(baseDeDades, null);
-            //System.out.println("*********** CONSULTAR MÒDULS ***********");
-            //Metodes.consultarModuls(baseDeDades, null);
-            //System.out.println("*********** CONSULTAR ALUMNES ***********");
-            //Metodes.consultarAlumnes(baseDeDades, null);
+            Metodes.consultarCicle(baseDeDades, null);
+            System.out.println("*********** CONSULTAR MÒDULS ***********");
+            Metodes.consultarModul(baseDeDades, null);
+            System.out.println("*********** CONSULTAR ALUMNES ***********");
+            Metodes.consultarAlumne(baseDeDades, null);
             
         } catch (Exception e) {
             System.out.print(e);
         }
         finally{
-            Metodes.cerrarConexion(baseDeDades);
+            Metodes.tancarConnexio(baseDeDades);
         }
     }
     
