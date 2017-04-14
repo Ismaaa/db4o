@@ -7,7 +7,7 @@ package classes.pojos;
 
 /**
  *
- * @author santi
+ * @author grup3
  */
 public class Alumne {
     private String DNI;
