@@ -130,7 +130,38 @@ public class Metodes {
 
     }
     
-
+    /**
+     * Consultem tots els cicles
+     * @param baseDeDades
+     * @param codi 
+     */
+    public static void consultarTotsCicles(ObjectContainer baseDeDades) {
+        Cicles cicle = new Cicles(null, null, 0);
+        ObjectSet resultat = baseDeDades.queryByExample(cicle);
+        imprimirResultatConsulta(resultat);
+    }
+    
+    /**
+     * Consultem tots els mòduls
+     * @param baseDeDades
+     * @param codi 
+     */
+    public static void consultarTotsModuls(ObjectContainer baseDeDades) {
+        Modul modul = new Modul(null, 0, null);
+        ObjectSet resultat = baseDeDades.queryByExample(modul);
+        imprimirResultatConsulta(resultat);
+    }
+    
+    /**
+     * Consultem tots els alumnes
+     * @param baseDeDades
+     * @param codi 
+     */
+    public static void consultarTotsAlumnes(ObjectContainer baseDeDades) {
+        Alumne alumne = new Alumne(null, null, null);
+        ObjectSet resultat = baseDeDades.queryByExample(alumne);
+        imprimirResultatConsulta(resultat);
+    }        
     
     /**
      * Consultem un cicle
@@ -159,8 +190,8 @@ public class Metodes {
      * @param baseDeDades
      * @param nom 
      */
-    public static void consultarAlumne(ObjectContainer baseDeDades, String nom) {
-        Alumne alumne = new Alumne(null, nom, null, 0);
+    public static void consultarAlumne(ObjectContainer baseDeDades, String dni) {
+        Alumne alumne = new Alumne(dni, null, null);
         ObjectSet resultat = baseDeDades.queryByExample(alumne);
         imprimirResultatConsulta(resultat);
     }

@@ -22,12 +22,15 @@ public class main {
         ObjectContainer baseDeDades=Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(),"grup3.db4o");
         
         //creem un cicle
-        Cicles cicle1=new Cicles("R321","Cicle 1",430);
+        Cicles cicle1=new Cicles("R9999","Cicle 1",430);
         //creem un modul
-        Modul modul1=new Modul("M03",417,"Programació");
+        Modul modul1=new Modul("M07",417,"Programació");
         //creem un alumne
-        Alumne alumne1=new Alumne("123654278F","Isma","Superior",23);
+        Alumne alumne1=new Alumne("321","Isma","Superior",23);
         try {
+            /**
+             * Desar els objectes
+             */
             System.out.println("*********** GUARDAR CICLES (\"***********");
             Metodes.guardarCicle(baseDeDades, cicle1);
             System.out.println("*********** GUARDAR MÒDULS ***********");
@@ -35,19 +38,35 @@ public class main {
             System.out.println("*********** GUARDAR ALUMNES ***********");
             Metodes.guardarAlumne(baseDeDades, alumne1);
             
+            /**
+             * Eliminar els objectes
+             */
             System.out.println("*********** ESBORRAR CICLES ***********");
-            Metodes.eliminarCicle(baseDeDades, "R321");
+            //Metodes.eliminarCicle(baseDeDades, "R321");
             System.out.println("*********** ESBORRAR MÒDULS ***********");
             Metodes.eliminarModul(baseDeDades, "M03");            
             System.out.println("*********** ESBORRAR ALUMNES ***********");
             Metodes.eliminarAlumne(baseDeDades, "123654278F");
             
-            System.out.println("*********** CONSULTAR CICLES ***********");
-            Metodes.consultarCicle(baseDeDades, null);
-            System.out.println("*********** CONSULTAR MÒDULS ***********");
-            Metodes.consultarModul(baseDeDades, null);
-            System.out.println("*********** CONSULTAR ALUMNES ***********");
-            Metodes.consultarAlumne(baseDeDades, null);
+            /**
+             * Consultar una llista de tots els objectes
+             */
+            //System.out.println("*********** CONSULTAR TOTS ELS CICLES ***********");
+            //Metodes.consultarTotsCicles(baseDeDades);
+            //System.out.println("*********** CONSULTAR TOTS ELS MÒDULS ***********");
+            //Metodes.consultarTotsModuls(baseDeDades);
+            //System.out.println("*********** CONSULTAR TOTS ELS ALUMNES ***********");
+            //Metodes.consultarTotsAlumnes(baseDeDades);
+            
+            /**
+             * Consultar un sol objecte
+             */
+            System.out.println("*********** CONSULTAR UN CICLE ***********");
+            Metodes.consultarCicle(baseDeDades, "R321");
+            System.out.println("*********** CONSULTAR UN MÒDUL ***********");
+            Metodes.consultarModul(baseDeDades, "M03");
+            System.out.println("*********** CONSULTAR UN ALUMNE ***********");
+            Metodes.consultarAlumne(baseDeDades, "321");
             
         } catch (Exception e) {
             System.out.print(e);
